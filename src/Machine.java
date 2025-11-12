@@ -25,15 +25,27 @@ public class Machine {
     	System.out.println("Машинка включена в розетку ");
     	System.out.println();
     	System.out.println("1 - Включить машинку");
-    	System.out.print("> ");
-    	int on = scanner.nextInt();
-    	switch (on) {
-        case 1:
-        	on();
-            break;
-    	}
+    	System.out.println(" > ");
+    	
+        if (scanner.hasNextInt()) {
+            int number = scanner.nextInt();
+            if(number == 1) {
+            	on();
+            }
+            System.out.println("Спасибо! Вы ввели число " + number);
+        }  
+        
+        
+        
+        else {
+            System.out.println("Извините, но это явно не число или не то число . Перезапустите программу и попробуйте снова!");
+        }
+        System.out.println(" > ");
     //ЦЫКЛ Повторение фрагмента неопределенное количество раз
   //   while(working) {
+        
+    }
+        public void menu() {
         System.out.println("\nВыберите действие:");
         System.out.println("        Menu");
         System.out.println("2 -Hand wash ");
@@ -76,6 +88,7 @@ public class Machine {
        if (!isPoweredOn) {
            isPoweredOn = true;
            System.out.println("  Машинка  включена.");
+           menu();
        } else {
            System.out.println("машинка выключена  уже включен");
        }
