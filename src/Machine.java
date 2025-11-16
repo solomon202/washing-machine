@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class Machine {
+	private static final String Котон = null;
+	private static final String Норма = null;
 	//самопрограмирующиися машина с начально задаными константами .
 	//Определение необходимых ресурсов — чётко определить, какие ресурсы понадобятся для выполнения задач проекта.
 	//Оценка доступных ресурсов — оценить, какие ресурсы доступны в данный момент (анализ текущих навыков команды, наличия оборудования и бюджета).
@@ -26,25 +28,31 @@ public class Machine {
     	System.out.println();
     	System.out.println("1 - Включить машинку");
     	System.out.println(" > ");
-    	
-        if (scanner.hasNextInt()) {
-            int number = scanner.nextInt();
-            if(number == 1) {
-            	on();
-            }
+    	 
+    
+		if (scanner.hasNextInt()) {
+			int number = scanner.nextInt();
+			if(number == 1) {
             System.out.println("Спасибо! Вы ввели число " + number);
-        }  
-        
-        
-        
-        else {
-            System.out.println("Извините, но это явно не число или не то число . Перезапустите программу и попробуйте снова!");
+            on();
+		}
+			else {
+	            System.out.println("Неправильне число");
+	           }
+    
+		}
+             else {
+                  System.out.println("Извините, но это явно не число или не то число . Перезапустите программу и попробуйте снова!");
+           
         }
-        System.out.println(" > ");
+	
+        
+    
+       
     //ЦЫКЛ Повторение фрагмента неопределенное количество раз
   //   while(working) {
         
-    }
+}
         public void menu() {
         System.out.println("\nВыберите действие:");
         System.out.println("        Menu");
@@ -101,10 +109,8 @@ public class Machine {
 	   if(!isPoweredOn) {
 		   System.out.println("Машинка выключена. Сначала включите её.");
 	   }else {
-	      coton = new Kotton("Kotton","Норма",400,30);
-	   
-	   
-	   
+	      coton = new Kotton( "Котон" ,"Норма", 1000, 60);
+	      
 	        System.out.println("\nВыберите действие:   Корекция режима ");
 
 	        System.out.println("1 - Полоскание");
@@ -112,6 +118,7 @@ public class Machine {
 	        System.out.println("3 - Температура");
 	        System.out.println("4 - Старт Пауза");
 	        System.out.println("0 - Выключить");
+			
 	        System.out.print("> ");
 	     //далее считываем при помощи метода сканирования 
 	        int choice = scanner.nextInt();
